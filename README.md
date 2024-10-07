@@ -38,36 +38,31 @@ To get started with the project, follow these steps:
 1. **Fork the Repository:**
    - Click on the "Fork" button at the top right of this page to create a copy of the repository in your GitHub account.
 
-2. **Clone Your Fork:**
-   - Clone your forked repository to your local machine using the following command:
-     ```bash
-     git clone https://github.com/your-username/student-database-management.git
-     ```
 
-3. **Create a New Branch:**
+2. **Create a New Branch:**
    - Navigate to the project directory and create a new branch for your task:
      ```bash
      cd student-database-management
      git checkout -b feature/your-task-name
      ```
 
-4. **Implement Your Task:**
+3. **Implement Your Task:**
    - Open your assigned Python file (e.g., `Terry.py`) and implement the required functionality as described in your task.
 
-5. **Commit Your Changes:**
+4. **Commit Your Changes:**
    - Once you have completed your task, commit your changes:
      ```bash
      git add Terry.py
      git commit -m "Implement add student function"
      ```
 
-6. **Push Your Changes:**
+5. **Push Your Changes:**
    - Push your branch to your forked repository:
      ```bash
      git push origin feature/your-task-name
      ```
 
-7. **Create a Pull Request:**
+6. **Create a Pull Request:**
    - Go to the original repository and click on "Pull Requests" to create a new PR from your branch.
 
 ## Approval Process
