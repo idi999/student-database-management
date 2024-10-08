@@ -29,7 +29,8 @@ student-database-management/
 ├── Matty.py
 ├── Dan_M.py
 ├── Ryan.py
-└── Edwards.py
+├── Edwards.py
+└── Sonny.py
 ```
 
 ## Getting Started
