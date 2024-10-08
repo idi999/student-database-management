@@ -8,14 +8,15 @@ from Jake import count_students
 from Dan_S import average_grade
 from Matty import save_to_file
 from Dan_M import load_from_file
- 
+
 # Initializing the student database as a list
 student_database = []
- 
+
 def main():
     # Load existing student data from file if needed
-    load_from_file("students.txt")
- 
+    global student_database
+    student_database = load_from_file("students.txt")
+
     while True:
         print("\n--- Student Database Management System ---")
         print("1. Add Student")
@@ -29,19 +30,19 @@ def main():
         print("9. Load from File")
         print("0. Exit")
         choice = input("Please choose an option (0-9): ")
- 
+
         if choice == '1':
             name = input("Enter student's name: ")
             age = int(input("Enter student's age: "))
             grade = float(input("Enter student's grade: "))
-            add_student(name, age, grade)
+            add_student(student_database, name, age, grade)
             print(f"Student {name} added successfully.")
         elif choice == '2':
             print("Displaying all students:")
-            display_students()
+            display_students(student_database)
         elif choice == '3':
             name = input("Enter the name of the student to search for: ")
-            student = search_student(name)
+            student = search_student(student_database, name)
             if student:
                 print(f"Student found: {student}")
             else:
@@ -49,29 +50,29 @@ def main():
         elif choice == '4':
             name = input("Enter the student's name to update their grade: ")
             new_grade = float(input("Enter the new grade: "))
-            update_grade(name, new_grade)
+            update_grade(student_database, name, new_grade)
             print(f"Grade updated for student {name}.")
         elif choice == '5':
             name = input("Enter the name of the student to delete: ")
-            delete_student(name)
+            delete_student(student_database, name)
             print(f"Student {name} deleted successfully.")
         elif choice == '6':
-            count = count_students()
+            count = count_students(student_database)
             print(f"There are {count} students in the database.")
         elif choice == '7':
-            avg_grade = average_grade()
+            avg_grade = average_grade(student_database)
             print(f"The average grade is: {avg_grade:.2f}")
         elif choice == '8':
-            save_to_file("students.txt")
+            save_to_file(student_database, "students.txt")
             print("Student data saved to students.txt.")
         elif choice == '9':
-            load_from_file("students.txt")
+            student_database = load_from_file("students.txt")
             print("Student data loaded from students.txt.")
         elif choice == '0':
             print("Exiting the program.")
             break
         else:
             print("Invalid choice, please try again.")
- 
+
 if __name__ == "__main__":
     main()
